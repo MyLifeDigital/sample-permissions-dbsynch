@@ -3,36 +3,23 @@ buildscript {
 		springBootVersion = '1.5.8.RELEASE'
 	}
 	repositories {
-		mavenLocal()
-		maven {
-			url 'https://nexus-i.consentric.io:8082/repository/maven-public'
-		}
+		mavenCentral()
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-		classpath 'io.consentric:platform-gradle-plugin:latest.release'
 	}
 }
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
-apply plugin: 'platform-gradle-plugin'
 
 group = 'consentric.io'
 version = '1.0.0'
 sourceCompatibility = 1.8
 
-DockerGradle {
-	containerGroup = 'mylifedigital'
-	containerName = 'effective-consents-connector'
-}
-
 repositories {
-	mavenLocal()
-	maven  {
-		url 'https://nexus-i.consentric.io:8082/repository/maven-public'
-	}
+	mavenCentral()
 }
 
 dependencies {
